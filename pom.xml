@@ -36,11 +36,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-rest</artifactId>
         </dependency>
-             <dependency>
+            <dependency>
     <groupId>mysql</groupId>
     <artifactId>mysql-connector-java</artifactId>
-    <version>8.1.0</version> <!-- ou la dernière compatible avec Spring Boot 3 -->
+    <version>8.0.33</version>
 </dependency>
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
