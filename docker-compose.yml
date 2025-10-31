@@ -15,7 +15,7 @@ services:
       - app-network
 
   springboot-app:
-    build: .
+    image: springboot-app:latest
     container_name: springboot_app
     ports:
       - "8081:8081"
