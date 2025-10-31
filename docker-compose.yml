@@ -15,7 +15,7 @@ services:
       - app-network
 
   springboot-app:
-    image: springboot-app:latest
+    image: springboot-app:latest  # Image déjà buildée
     container_name: springboot_app
     ports:
       - "8081:8081"
