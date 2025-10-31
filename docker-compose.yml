@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   mysql:
     image: mysql:8
@@ -8,7 +10,7 @@ services:
       MYSQL_USER: user
       MYSQL_PASSWORD: password
     ports:
-      - "3307:3306" # Pour accéder depuis l’hôte si besoin
+      - "3307:3306"  # Pour l'accès depuis l'hôte
     networks:
       - app-network
 
@@ -25,6 +27,14 @@ services:
       - mysql
     networks:
       - app-network
+    command: >
+      sh -c "echo Waiting for MySQL...;
+             until nc -z mysql 3306; do
+               echo MySQL is not ready yet...
+               sleep 5
+             done
+             echo MySQL is up! Starting Spring Boot...
+             java -jar app.jar"
 
 networks:
   app-network:
